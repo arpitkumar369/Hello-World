@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.192.0/containers/javascript-node
+{
+	"image": "ghcr.io/2percentsilk/universe:latest",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"hoovercj.ruby-linter",
+		"esbenp.prettier-vscode"
+	],
+
+	"forwardPorts": [3000],
+	
+	"portsAttributes": {
+		"3000": {
+			"label": "Application",
+			"onAutoForward": "openBrowser",
+			"protocol": "https"
+		}
+	},
+	
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "yarn install",
+
+}
